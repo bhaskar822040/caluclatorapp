@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<style type="text/css">
+body{
+text-align: center;
+background-color: #eabfbf;
+margin-top: 5%;
+font-family: sans-serif;
+}
+.margint-10{
+margin-top: 10px;
+}
+.primary-color{
+color:#801717;
+}
+.second-color{
+color: #e91e68;
+}
+.marginl-10{
+margin-left: 10px
+}
+.font-16{
+font-size: 20px;
+}
+input{
+border: 1px solid #801717;
+height: 2em;
+    font-size: 16px;
+    width:6em;
+}
+input[type="button"]{
+border-radius: 10px;
+}
+
+</style>
+<body>
+<h1 class="primary-color">Welcome to the online calculator</h1>
+<div>
+<h3 class="second-color">Enter two numbers</h3>
+<label class="second-color">Num1</label><input type="number" id="first" class="marginl-10">&nbsp;
+<label class="second-color">Num2</label><input type="number" id="second" class="marginl-10">
+</div>
+
+<div>
+<h3 class="primary-color">Click the arithmetic operation you wish to perform</h3>
+<input type="button" name="add" value="+" onClick="calValue(this.value)">
+<input type="button" name="sub" value="-" onClick="calValue(this.value)">
+<input type="button" name="mul" value="*" onClick="calValue(this.value)">
+<input type="button" name="div" value="/" onClick="calValue(this.value)"><br>
+<div class="margint-10">
+<input type="button" name="clear" value="Clear" onClick="clearAll()"><br>
+</div>
+
+</div>
+<div class="margint-10">
+<label class="second-color">Result: </label>
+<span id="res" class="font-16"></span>
+</div>
+<script type="text/javascript">
+function calValue(val){
+console.log(val);
+var num1=document.getElementById("first").value;
+var num2=document.getElementById("second").value;
+var res= +num1 +val+ +num2;
+document.getElementById("res").innerHTML = eval(res);
+}
+function clearAll(){
+document.getElementById("first").value="";
+document.getElementById("second").value="";
+document.getElementById("res").innerHTML = "";
+}
+</script>
+</body>
+</html>
